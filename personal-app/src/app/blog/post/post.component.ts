@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'post',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  name: string | null;
+  fileName: string;
+  constructor( private route: ActivatedRoute) { 
+    this.name = this.route.snapshot.paramMap.get('name');
+    this.fileName = './assets/blogs/' + this.name + '.md';
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
 }
