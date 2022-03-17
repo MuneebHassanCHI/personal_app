@@ -1,0 +1,10 @@
+<div>
+    <ul style="padding-bottom: 36px;">
+        <ng-container *ngFor="let name of blogNames">
+            <li>
+                <h3 routerLink="/post/{{name}}" routerLinkActive="active">{{name}}</h3> 
+            </li>
+        </ng-container>
+    </ul>
+</div>
+

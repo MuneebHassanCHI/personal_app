@@ -1,0 +1,30 @@
+.accordion-tabs {
+    clear: both;
+    line-height: 1.5;
+    padding: 0;
+    max-width: 45rem;
+    position: relative;
+}
+
+.accordion-tabs .tab-header-and-content {
+    display: inline;
+    cursor: pointer;
+}
+
+.accordion-tabs .tab-header-and-content:hover {
+    color: #268bd2;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin: 0px !important;
+}
+
+.accordion-tabs .tab-aside-content:hover {
+    color: blue;
+}
+
+.mr-46 {
+    margin-right: 46px;
+}
