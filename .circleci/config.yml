@@ -1,17 +1,24 @@
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@4.1
+
+
 jobs:
   build:
-    working_directory: ~/personal_app
     docker:
-      - image: circleci/node:10-browsers
+      - image: cimg/node:15.1
     steps:
+    
       - checkout
-      - restore_cache:
-          key: my-project-{{ .main }}-{{ checksum "yarn.lock" }}
-      - run: npm install
-      - save_cache:
-          key: my-project-{{ .main }}-{{ checksum "yarn.lock" }}
-          paths:
-            - "node_modules"
-      - run: yarn start
+   
+      - node/install-packages
+ 
+      - run:
+          name: Run tests
+          command: npm test
 
+workflows:
+  sample:
+    jobs:
+      - build
