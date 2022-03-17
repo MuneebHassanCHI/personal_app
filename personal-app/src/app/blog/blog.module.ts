@@ -15,17 +15,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes),
+        RouterModule.forChild(routes),
         MarkdownModule.forRoot({ loader: HttpClient }),
         HttpClientModule
-        // CommonModule,
-        // RouterModule.forChild([
-        // {path: '', pathMatch: 'full',
-        //             loadChildren: './blog/blog-view.module#BlogViewModule'},
-        // {path: 'post', 
-        //             loadChildren: './post/blog-post-view.module#BlogPostViewModule'},
-        // ]),
-        // MarkdownModule.forRoot()
     ],
     declarations: [
         BlogComponent,
