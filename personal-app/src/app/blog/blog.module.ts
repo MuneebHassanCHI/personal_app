@@ -1,6 +1,8 @@
 import { CommonModule } from "@angular/common";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { MarkdownModule } from "ngx-markdown";
 import { BlogComponent } from "./blog.component";
 import { PostComponent } from "./post/post.component";
 
@@ -13,7 +15,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        MarkdownModule.forRoot({ loader: HttpClient }),
+        HttpClientModule
         // CommonModule,
         // RouterModule.forChild([
         // {path: '', pathMatch: 'full',
@@ -29,6 +33,9 @@ const routes: Routes = [
     ],
     exports: [
         BlogComponent,
+    ],
+    providers: [
+        
     ]
 
 })
