@@ -12,6 +12,9 @@ jobs:
       - run:
           name: add ngx
           command: yarn add ngx-markdown
+      - run:
+          name: Create Build
+          command: yarn build
 workflows:
   sample:
     jobs:
