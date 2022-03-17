@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:15.1
-    working_directory: ~/personal_app/personal-app/package.json
+    working_directory: ~/personal_app/personal-app/
     steps:
       - checkout
       - node/install-packages:
