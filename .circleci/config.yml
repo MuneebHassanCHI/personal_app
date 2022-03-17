@@ -7,10 +7,11 @@ jobs:
       - image: cimg/node:15.1
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
-          name: Run tests
-          command: npm test
+          name: Add NGX-MARKDOWN
+          command: yarn add ngx-markdown
 workflows:
   sample:
     jobs:
