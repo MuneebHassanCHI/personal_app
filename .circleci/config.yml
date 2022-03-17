@@ -10,14 +10,8 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: Add NGX-MARKDOWN
+          name: add ngx
           command: yarn add ngx-markdown
-      - run:
-          command: yarn test
-          name: Run tests
-      - run:
-          command: yarn build
-          name: Build app
 workflows:
   sample:
     jobs:
